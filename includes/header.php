@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,7 +16,12 @@
         <a href="/">Softcult</a>
     </div>
     <div class="nav-buttons">
-        <a href="/login.php" class="btn">Login</a>
-        <a href="/signup.php" class="btn btn-primary">Sign Up</a>
+        <?php if (isset($_SESSION['user_id'])) : ?>
+            <a href="/dashboard.php" class="btn">Bonjour, <?= htmlspecialchars($_SESSION['username']); ?></a>
+            <a href="/controllers/logout.php" class="btn btn-primary">Déconnexion</a>
+        <?php else : ?>
+            <a href="/login.php" class="btn">Login</a>
+            <a href="/signup.php" class="btn btn-primary">Sign Up</a>
+        <?php endif; ?>
     </div>
 </header>
