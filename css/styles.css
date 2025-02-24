@@ -1,0 +1,209 @@
+/* Reset et styles de base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://imagedelivery.net/S_KBi515leX4rwPDIF-mpg/42310a20-b27c-427e-3826-5ab560ad2800/w=1920,f=auto,fit=cover");
+    background-size: cover;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+  }
+  
+  .login-page {
+    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/04/anime-aesthetic-sailor-moon-desktop-wallpaper-preview.jpg');
+    background-size: cover;
+    background-position: 0%0%;
+    background-repeat: no-repeat;
+  }
+  .register-page {
+    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2023/11/aesthetic-sailor-moon-anime-desktop-wallpaper-preview.jpg');
+    background-size: cover;
+    background-position: 0%0%; 
+    background-repeat: no-repeat;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 24px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #d18eba;
+  }
+  
+  .centered-title {
+    position: relative;
+    text-align: center;
+    margin-top: 20vh;
+    color: rgb(255, 103, 214);
+    z-index: 1;
+  }
+  
+  .centered-title h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .centered-title h2 {
+    font-size: 2em;
+    margin: 10px 0;
+  }
+  
+/* Navbar principale */
+.nav-bar {
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+/* Logo */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Menu principal */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* Boutons à droite */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Style des boutons */
+.btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    color: white;
+    border: 1px solid white;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+    background: white;
+    color: black;
+}
+
+.btn-primary:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+
+  
+  .login-card {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+    margin: 200px auto 0;
+    text-align: center;
+    backdrop-filter: blur(20px); 
+    border: 1px solid rgba(255, 255, 255, 0.18); 
+  }
+  
+  .login-card label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(255, 103, 214); 
+  }
+  
+  .login-card input[type="text"],
+  .login-card input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .login-card input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-card input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  

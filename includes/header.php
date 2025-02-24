@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Ma Boutique</h1>
-        <nav>
-            <a href="index.php">Accueil</a>
-            <a href="cart.php">Panier</a>
-        </nav>
-    </header>
+<header class="nav-bar">
+    <div class="logo">
+        <a href="#">Softcult</a>
+    </div>
+    <div class="nav-buttons">
+        <a href="#" class="btn">Login</a>
+        <a href="#" class="btn btn-primary">Sign Up</a>
+    </div>
+</header>
