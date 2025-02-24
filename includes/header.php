@@ -16,6 +16,9 @@ session_start();
         <a href="/">Softcult</a>
     </div>
     <div class="nav-buttons">
+        <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin') : ?>
+            <a href="/admin/dashboard.php" class="btn btn-admin">Admin Panel</a>
+        <?php endif; ?>
         <?php if (isset($_SESSION['user_id'])) : ?>
             <a href="/dashboard.php" class="btn">Bonjour, <?= htmlspecialchars($_SESSION['username']); ?></a>
             <a href="/controllers/logout.php" class="btn btn-primary">Déconnexion</a>

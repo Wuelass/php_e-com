@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Vérifier si l'utilisateur existe
-    $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE email = :email");
+    $stmt = $pdo->prepare("SELECT id, username, password, role FROM users WHERE email = :email");
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Connexion réussie, créer une session
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
 
         error_log("Connexion réussie pour {$user['username']} (ID: {$user['id']})");
         header("Location: /"); // Rediriger vers une page après connexion
