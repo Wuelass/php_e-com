@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 
 <div class="login-card">
-        <form method="POST" action="/login">
+        <form method="POST" action="/controllers/login.php">
             <label>Email</label>
             <input name="email" type="text" value=""/>
             <label>Password</label>

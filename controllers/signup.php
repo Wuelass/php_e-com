@@ -32,10 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
 
             if ($stmt) {
-                error_log("Inscription réussie. Vous pouvez maintenant vous connecter.");
+                error_log("Inscription réussie. Redirection en cours...");
+                header("Location: ../login.php"); // Redirige vers la page de connexion
+                exit(); // Important pour arrêter l'exécution après la redirection
             } else {
                 error_log("Erreur lors de l'inscription.");
             }
+            
             
         }
     }
