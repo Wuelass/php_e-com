@@ -22,7 +22,7 @@ session_start();
     <div class="nav-buttons">
         <a href="/" class="btn">Store</a>
         <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin') : ?>
-            <a href="/admin/dashboard.php" class="btn btn-admin">Admin Panel</a>
+            <a href="/admin_menu.php" class="btn btn-admin">Admin Panel</a>
         <?php endif; ?>
         <?php if (isset($_SESSION['user_id'])) : ?>
             <a href="/dashboard.php" class="btn">Bonjour, <?= htmlspecialchars($_SESSION['username']); ?></a>
