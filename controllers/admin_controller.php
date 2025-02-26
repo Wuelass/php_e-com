@@ -1,5 +1,6 @@
 <?php
 require 'config.php'; // Connexion à la base de données
+require 'upload.php';
 
 // Ajout d'un produit
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add'])) {
@@ -8,11 +9,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add'])) {
     $stock_quantity = $_POST['stock_quantity'];
     $description = $_POST['description'];
 
-    $stmt = $pdo->prepare("INSERT INTO product (product_name, price, stock_quantity, description) VALUES (?, ?, ?, ?)");
-    $stmt->execute([$product_name, $price, $stock_quantity, $description]);
+    // Upload de l'image
+    $image_path = uploadImage($_FILES['image']);
 
-    header("Location: admin_menu.php");
-    exit();
+    // Insérer dans la BDD uniquement si l'image est bien enregistrée
+    if ($image_path) {
+        $stmt = $pdo->prepare("INSERT INTO product (product_name, price, stock_quantity, description, image) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$product_name, $price, $stock_quantity, $description, $image_path]);
+
+        header("Location: admin_menu.php");
+        exit();
+    } else {
+        echo "Erreur lors de l'upload de l'image.";
+    }
 }
 
 // Suppression d'un produit
