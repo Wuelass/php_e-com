@@ -27,6 +27,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add'])) {
 // Suppression d'un produit
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
+
+    // Récupérer le chemin de l'image associée
+    $stmt = $pdo->prepare("SELECT image FROM product WHERE id = ?");
+    $stmt->execute([$id]);
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($product && $product['image']) {
+        $image_path = $product['image'];
+
+        // Vérifier si l'image existe et la supprimer
+        if (file_exists($image_path) && $image_path !== "uploads/default.jpg") { // Évite de supprimer une image par défaut
+            unlink($image_path);
+        }
+    }
+
+    // Supprimer le produit de la base de données
     $stmt = $pdo->prepare("DELETE FROM product WHERE id = ?");
     $stmt->execute([$id]);
 
