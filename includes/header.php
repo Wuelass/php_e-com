@@ -23,7 +23,7 @@ session_start();
         <a href="/">Softcult</a>
     </div>
     <div class="nav-buttons">
-        <a href="/" class="btn">Store</a>
+        <a href="/store.php" class="btn">Store</a>
         <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin') : ?>
             <a href="/admin_menu.php" class="btn btn-admin">Admin Panel</a>
         <?php endif; ?>

@@ -3,7 +3,7 @@
 
 <div class="container">
     <h2>Modifier le produit</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <input type="text" name="product_name" value="<?= htmlspecialchars($product['product_name']) ?>" required>
         <input type="number" name="price" value="<?= htmlspecialchars($product['price']) ?>" required>
         <input type="number" name="stock_quantity" value="<?= htmlspecialchars($product['stock_quantity']) ?>" required>
