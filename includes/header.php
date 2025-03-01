@@ -28,6 +28,7 @@ session_start();
             <a href="/admin_menu.php" class="btn btn-admin">Admin Panel</a>
         <?php endif; ?>
         <?php if (isset($_SESSION['user_id'])) : ?>
+            <a href="/cart.php" class="btn btn-admin">Panier</a>
             <a href="/dashboard.php" class="btn">Bonjour, <?= htmlspecialchars($_SESSION['username']); ?></a>
             <a href="/controllers/logout.php" class="btn btn-primary">Déconnexion</a>
         <?php else : ?>

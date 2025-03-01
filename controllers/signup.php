@@ -32,14 +32,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
 
             if ($stmt) {
-                error_log("Inscription réussie. Redirection en cours...");
-                header("Location: ../login.php"); // Redirige vers la page de connexion
-                exit(); // Important pour arrêter l'exécution après la redirection
+                // Récupérer l'ID du nouvel utilisateur
+                $user_id = $pdo->lastInsertId();
+
+                // Insérer l'ID de l'utilisateur dans la table cart
+                $stmt = $pdo->prepare("INSERT INTO cart (user_id) VALUES (:user_id)");
+                $stmt->execute(['user_id' => $user_id]);
+
+                if ($stmt) {
+                    error_log("Inscription réussie et panier créé. Redirection en cours...");
+                    header("Location: ../login.php"); // Redirige vers la page de connexion
+                    exit(); // Important pour arrêter l'exécution après la redirection
+                } else {
+                    error_log("Erreur lors de la création du panier.");
+                }
             } else {
                 error_log("Erreur lors de l'inscription.");
             }
-            
-            
         }
     }
 }
