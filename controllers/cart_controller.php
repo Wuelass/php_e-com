@@ -19,7 +19,7 @@ if (!$cart_id) {
 }
 
 // Récupérer les produits dans le panier
-$stmt = $pdo->prepare("SELECT p.product_name, p.image, ci.price_at_cart, ci.product_id FROM cart_item ci JOIN product p ON ci.product_id = p.id WHERE ci.cart_id = :cart_id");
+$stmt = $pdo->prepare("SELECT p.product_name, p.image, ci.price_at_cart, ci.product_id, ci.quantity FROM cart_item ci JOIN product p ON ci.product_id = p.id WHERE ci.cart_id = :cart_id");
 $stmt->execute(['cart_id' => $cart_id]);
 $cart_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
